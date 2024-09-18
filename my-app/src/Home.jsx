@@ -22,7 +22,8 @@ const Home = () => {
             <div className="search-bar">
                 <p>Dev@DEAKIN</p>
                 <input type="text" placeholder="Search..." />
-                <button type="button">Post</button> {/* Post button functionality can be added later */}
+                <Link to='/post'><button type="button">Post</button> {/* Post button functionality can be added later */}</Link>
+                
             </div>
 
             <div className="actions">

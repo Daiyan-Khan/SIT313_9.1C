@@ -1,0 +1,52 @@
+
+  
+  .TitleBox {
+    margin-bottom: 10px;
+  }
+  
+  .QuestionSection p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .TextArea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    width: 100%;
+    height: 500px;
+  }
+  
+  .TextArea:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Tags {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .Tags ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .Tags li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .Tags a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  
+  .Tags a:hover {
+    color: #23527c;
+  }
