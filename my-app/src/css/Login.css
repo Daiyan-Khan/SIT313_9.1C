@@ -1,6 +1,6 @@
 /* Apply a background image and center content */
 body {
-    background-image: url('img.jpg'); /* Ensure the image path is correct */
+    background-image: url('../images/img.jpg'); /* Ensure the image path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

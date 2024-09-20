@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // For navigation
-import Header from './Header'; // Assuming Header is a reusable component
-import Card from './Card'; // Assuming 'Card' is a reusable component
-import Button from './Button'; // Assuming 'Button' is a reusable button component
-import Footer from './Footer'; // Footer component
-import SignUp from './Subscribe'; // Assuming SignUp is a reusable component
-import './Home.css'; // For styling the home page
+import Header from './Header'; // Reusable header component
+import Card from './Card'; // Reusable card component for articles/tutorials
+import Button from './Button'; // Reusable button component
+import Footer from './Footer'; // Reusable footer component
+import SignUp from './Subscribe'; // Reusable sign-up component
+import './css/Home.css'; // Styles specific to the Home component
 
+/**
+ * Home component.
+ * This component serves as the main landing page for the application,
+ * displaying welcome text, search functionality, articles, tutorials,
+ * and user authentication actions.
+ */
 const Home = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track user login status
+    const navigate = useNavigate(); // Hook for programmatic navigation
 
     // Check if user is logged in when component mounts
     useEffect(() => {
-        const token = localStorage.getItem('authToken');
+        const token = localStorage.getItem('authToken'); // Retrieve token from local storage
         if (token) {
-            setIsLoggedIn(true);
+            setIsLoggedIn(true); // Update state if token exists
         }
     }, []);
 
-    // Handle logout function
+    // Handle user logout functionality
     const handleLogout = () => {
-        localStorage.removeItem('authToken'); // Remove the token
-        setIsLoggedIn(false); // Update state
+        localStorage.removeItem('authToken'); // Remove token from local storage
+        setIsLoggedIn(false); // Update login state
         navigate('/login'); // Redirect to login page
     };
 
     return (
         <div className="home-page">
-            <Header /> {/* Assuming Header is imported */}
+            <Header /> {/* Render the header component */}
             <img 
                 style={{ width: 1500 }} 
                 src={require('./images/Deakin.avif')} 
@@ -40,12 +46,13 @@ const Home = () => {
             <div className="search-bar">
                 <p>Dev@DEAKIN</p>
                 <input type="text" placeholder="Search..." />
+                {/* Conditional rendering for post button or sign-up prompt */}
                 {isLoggedIn ? (
                     <Link to='/post'>
-                        <button type="button">Post</button>
+                        <button type="button">Post</button> {/* Button to navigate to post page */}
                     </Link>
                 ) : (
-                    <p>Sign up/Login to post</p>
+                    <p>Sign up/Login to post</p> // Prompt for authentication
                 )}
             </div>
 
@@ -53,11 +60,11 @@ const Home = () => {
             <div className="actions">
                 {isLoggedIn ? (
                     <button className="logout-button" onClick={handleLogout}>
-                        Logout
+                        Logout {/* Logout button functionality */}
                     </button>
                 ) : (
                     <Link to="/login">
-                        <button className="login-button">Login</button>
+                        <button className="login-button">Login</button> {/* Button to navigate to login page */}
                     </Link>
                 )}
             </div>
@@ -87,7 +94,7 @@ const Home = () => {
                     rating="4.5" 
                 />
             </div>
-            <Button text="See all articles" />
+            <Button text="See all articles" /> {/* Button to navigate to all articles */}
 
             {/* Featured Tutorials Section */}
             <h1 className="TutorialHeadline">Featured Tutorials</h1>
@@ -114,13 +121,13 @@ const Home = () => {
                     rating="4.5" 
                 />
             </div>
-            <Button text="See all tutorials" />
+            <Button text="See all tutorials" /> {/* Button to navigate to all tutorials */}
 
             {/* SignUp Section */}
-            <SignUp />
+            <SignUp /> {/* Render the sign-up component */}
 
             {/* Footer */}
-            <Footer />
+            <Footer /> {/* Render the footer component */}
         </div>
     );
 };

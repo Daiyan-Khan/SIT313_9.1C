@@ -3,7 +3,7 @@ import { useNavigate,Link } from 'react-router-dom';
 import { signInWithEmail } from '../utils/firebase'; // Firebase authentication utility
 import Input from '../Input';
 import Button from '../Button';
-import './Login.css'; // Import the CSS file
+import '../css/Login.css'; // Import the CSS file
 
 const Login = () => {
     const [formData, setFormData] = useState({

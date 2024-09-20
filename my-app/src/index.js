@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'; // Use the new React 18 API
-import './index.css';
+import './css/index.css';
 import App from './App';
 
 // Create a root for the React app

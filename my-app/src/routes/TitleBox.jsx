@@ -1,11 +1,17 @@
+// TitleBox.jsx
 import React from 'react';
 import '../css/TitleBox.css';
 
-const TitleBox = (props) => {
+const TitleBox = ({ placeholder }) => {
   return (
     <div className="TitleBox">
-        <p style={{ marginRight: 10 }}>Title</p>
-        <input style = {{height:20, width: 600}} placeholder = {props.text}/>
+      <label htmlFor="titleInput" style={{ marginRight: 10 }}>Title</label>
+      <input 
+        id="titleInput"
+        style={{ height: 20, width: 600 }} 
+        placeholder={placeholder} 
+        aria-label="Title input" // For accessibility
+      />
     </div>
   );
 };

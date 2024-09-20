@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { signUpWithEmail } from '../utils/firebase';
 import Input from '../Input';
 import Button from '../Button';
-import './SignUp.css'
+import '../css/SignUp.css'
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -62,6 +62,9 @@ const Signup = () => {
                 <Link to="/login">
                         <button className="login-button">Login</button>
                     </Link>
+                    <Link to='/'>
+      <Button text={'Home'} />
+      </Link>
             </form>
             {error && <p>{error}</p>}
         </div>

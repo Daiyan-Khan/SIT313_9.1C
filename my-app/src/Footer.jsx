@@ -1,10 +1,15 @@
 import React from 'react';
-import './Footer.css'; // Import CSS file for styling
+import './css/Footer.css'; // Import CSS file for styling
 
+/**
+ * Footer component for the application.
+ * Displays navigation links, social media icons, and legal information.
+ */
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
+                {/* Section for navigation links */}
                 <div className="footer-section">
                     <h4>Explore</h4>
                     <ul>
@@ -14,6 +19,8 @@ const Footer = () => {
                         <li><a href="/">Tutorials</a></li>
                     </ul>
                 </div>
+
+                {/* Section for support links */}
                 <div className="footer-section">
                     <h4>Support</h4>
                     <ul>
@@ -22,15 +29,37 @@ const Footer = () => {
                         <li><a href="/">Contact Us</a></li>
                     </ul>
                 </div>
+
+                {/* Section for social media links */}
                 <div className="footer-section">
                     <h4>Stay connected</h4>
                     <ul className="social-icons">
-                        <li><a href="/"><i className="fab fa-facebook-f"><img className ='icon' src={require('./images/fb.png')}></img></i></a></li>
-                        <li><a href="/"><i className="fab fa-twitter"><img className='icon' src={require('./images/twitter.jpg')}></img></i></a></li>
-                        <li><a href="/"><i className="fab fa-instagram"><img className= 'icon' src={require('./images/ig.png')}></img></i></a></li>
+                        <li>
+                            <a href="/">
+                                <i className="fab fa-facebook-f">
+                                    <img className='icon' src={require('./images/fb.png')} alt="Facebook" />
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <i className="fab fa-twitter">
+                                    <img className='icon' src={require('./images/twitter.jpg')} alt="Twitter" />
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <i className="fab fa-instagram">
+                                    <img className='icon' src={require('./images/ig.png')} alt="Instagram" />
+                                </i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
+
+            {/* Bottom section for legal information */}
             <div className="footer-bottom">
                 <p>&copy; DEV@Deakin 2022</p>
                 <ul>
