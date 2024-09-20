@@ -7,7 +7,7 @@ import '../css/PostPage.css'; // Importing CSS for styling the PostPage
 
 /**
  * Article component.
- * This component renders a form for creating a new article, 
+ * This component will render form for creating a new article, 
  * including fields for a title, abstract, article text, and tags.
  */
 const Article = () => {
