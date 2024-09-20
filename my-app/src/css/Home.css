@@ -87,9 +87,7 @@
 .TutorialSection {
     display: flex;
     flex-direction: row; /* Stack items vertically */
-    padding: 20px 500px 50px; /* Adjust padding */
-    background-color: #330A6A; /* Purple background */
-    margin: -25px -250px -50px -200px; /* Adjust margins */
+    margin: auto;
     color: whitesmoke; /* Text color */
     border-radius: 12px; /* Rounded corners */
 }
@@ -98,17 +96,8 @@
     padding-bottom: 20px;
 }
   
-  .TutorialHeadline{
-    background-color: #330A6A;
-    margin-top:-45px;
-    padding-top: 50px;
-    margin-left:-250px;
-    padding-left: 100px;
-    margin-right: -250px;
-  }
   
   h1{
     text-align: center;
-    
   }
   

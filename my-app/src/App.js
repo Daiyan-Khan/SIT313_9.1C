@@ -4,7 +4,7 @@ import Home from './Home';  // Home page component
 import Login from './routes/Login'; // Login page component
 import Signup from './routes/SignUp'; // Signup page component
 import PostPage from './routes/PostPage'; // Post page component
-
+import './css/App.css'
 const App = () => {
     return (
         // Router setup for managing client-side routing in the app
