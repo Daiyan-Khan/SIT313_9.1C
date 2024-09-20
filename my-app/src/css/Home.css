@@ -87,7 +87,7 @@
 .TutorialSection {
     display: flex;
     flex-direction: row; /* Stack items vertically */
-    margin: auto;
+    margin-left: 300px;
     color: whitesmoke; /* Text color */
     border-radius: 12px; /* Rounded corners */
 }
@@ -99,5 +99,9 @@
   
   h1{
     text-align: center;
+  }
+  
+.subscribe{
+    margin-left: 200px;
   }
   

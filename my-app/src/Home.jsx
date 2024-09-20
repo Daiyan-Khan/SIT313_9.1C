@@ -4,7 +4,7 @@ import Header from './Header'; // Reusable header component
 import Card from './Card'; // Reusable card component for articles/tutorials
 import Button from './Button'; // Reusable button component
 import Footer from './Footer'; // Reusable footer component
-import SignUp from './Subscribe'; // Reusable sign-up component
+import Subscribe from './Subscribe'; // Reusable sign-up component
 import './css/Home.css'; // Styles specific to the Home component
 
 /**
@@ -122,9 +122,10 @@ const Home = () => {
                 />
             </div>
             <Button text="See all tutorials" /> {/* Button to navigate to all tutorials */}
-
+            <div className='subscribe'>
             {/* SignUp Section */}
-            <SignUp /> {/* Render the sign-up component */}
+            <Subscribe  /> {/* Render the sign-up component */}
+            </div>
 
             {/* Footer */}
             <Footer /> {/* Render the footer component */}

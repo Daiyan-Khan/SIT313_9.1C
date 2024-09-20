@@ -7,7 +7,7 @@ import Button from './Button'; // Importing reusable Button component
  * This component displays a header for signing up for daily updates,
  * along with an input field for user input and a submit button.
  */
-const SignUp = () => {
+const Subscribe = () => {
   return (
     <div className='header'>
       <h2>Sign up for daily insider</h2> {/* Header text for the sign-up section */}
@@ -17,4 +17,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Subscribe;
