@@ -93,10 +93,13 @@
     border-radius: 12px; /* Rounded corners */
 }
 
+.ArticleSection{
+    padding-bottom: 20px;
+}
   
   .TutorialHeadline{
     background-color: #330A6A;
-    margin-top:-25px;
+    margin-top:-45px;
     padding-top: 50px;
     margin-left:-250px;
     padding-left: 100px;
