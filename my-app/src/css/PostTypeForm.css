@@ -2,10 +2,10 @@
 
 .PostTypeForm {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    padding: 20px;
-    background-color: #2808c9;
+    padding: 10px;
+    background-color: #cb14c2f0, transparent(0.2);
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,6 +16,7 @@
     align-items: center;
     margin-bottom: 10px;
     cursor: pointer;
+    color: white;
   }
   
   .PostTypeForm input[type="radio"] {
@@ -33,6 +34,7 @@
   
   .PostTypeForm label:hover {
     background-color: #f2f2f2;
+    color: black
   }
   
   .PostTypeForm label:hover input[type="radio"] {

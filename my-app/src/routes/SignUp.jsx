@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { signUpWithEmail } from '../utils/firebase';
 import Input from '../Input';
 import Button from '../Button';
@@ -59,6 +59,9 @@ const Signup = () => {
                     <Input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" onChange={handleChange} value={formData.confirmPassword} />
                 </div>
                 <Button type="submit" text="Create" />
+                <Link to="/login">
+                        <button className="login-button">Login</button>
+                    </Link>
             </form>
             {error && <p>{error}</p>}
         </div>

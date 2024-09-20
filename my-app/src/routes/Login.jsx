@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { signInWithEmail } from '../utils/firebase';
+import { useNavigate,Link } from 'react-router-dom';
+import { signInWithEmail } from '../utils/firebase'; // Firebase authentication utility
 import Input from '../Input';
 import Button from '../Button';
 import './Login.css'; // Import the CSS file
@@ -24,7 +24,8 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await signInWithEmail(formData.email, formData.password);
+            const token = await signInWithEmail(formData.email, formData.password); // Assuming this function returns a token
+            localStorage.setItem('authToken', token); // Store the token in localStorage
             navigate('/'); // Redirect to the home page after successful login
         } catch (error) {
             setError(error.message); // Display the error message to the user
@@ -42,6 +43,9 @@ const Login = () => {
                 <Input name="email" type="email" placeholder="Email" onChange={handleChange} value={formData.email} />
                 <Input name="password" type="password" placeholder="Password" onChange={handleChange} value={formData.password} />
                 <Button type="submit" text="Log In" />
+                <Link to='/'>
+      <Button text={'Home'} />
+      </Link>
             </form>
             {error && <p className='error-message'>{error}</p>}
         </div>

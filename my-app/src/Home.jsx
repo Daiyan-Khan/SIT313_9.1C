@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // For navigation
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // For navigation
 import Header from './Header'; // Assuming Header is a reusable component
 import Card from './Card'; // Assuming 'Card' is a reusable component
 import Button from './Button'; // Assuming 'Button' is a reusable button component
@@ -8,6 +8,24 @@ import SignUp from './Subscribe'; // Assuming SignUp is a reusable component
 import './Home.css'; // For styling the home page
 
 const Home = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+
+    // Check if user is logged in when component mounts
+    useEffect(() => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    // Handle logout function
+    const handleLogout = () => {
+        localStorage.removeItem('authToken'); // Remove the token
+        setIsLoggedIn(false); // Update state
+        navigate('/login'); // Redirect to login page
+    };
+
     return (
         <div className="home-page">
             <Header /> {/* Assuming Header is imported */}
@@ -22,14 +40,26 @@ const Home = () => {
             <div className="search-bar">
                 <p>Dev@DEAKIN</p>
                 <input type="text" placeholder="Search..." />
-                <Link to='/post'><button type="button">Post</button> {/* Post button functionality can be added later */}</Link>
-                
+                {isLoggedIn ? (
+                    <Link to='/post'>
+                        <button type="button">Post</button>
+                    </Link>
+                ) : (
+                    <p>Sign up/Login to post</p>
+                )}
             </div>
 
+            {/* Actions: Login/Logout Button */}
             <div className="actions">
-                <Link to="/login">
-                    <button className="login-button">Login</button>
-                </Link>
+                {isLoggedIn ? (
+                    <button className="logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                ) : (
+                    <Link to="/login">
+                        <button className="login-button">Login</button>
+                    </Link>
+                )}
             </div>
 
             {/* Featured Articles Section */}
@@ -60,7 +90,7 @@ const Home = () => {
             <Button text="See all articles" />
 
             {/* Featured Tutorials Section */}
-            <h1 class='TutorialHeadline'>Featured Tutorials</h1>
+            <h1 className="TutorialHeadline">Featured Tutorials</h1>
             <div className="TutorialSection">
                 <Card 
                     image={require('./images/Deakin.avif')}

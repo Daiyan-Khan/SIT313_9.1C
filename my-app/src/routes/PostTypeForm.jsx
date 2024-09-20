@@ -7,7 +7,7 @@ const PostTypeForm = ({ postType, onChange }) => {
   };
 
   return (
-    <form>
+    <form class ='PostTypeForm'>
       <label>
         <input
           onChange={handlePostTypeChange}

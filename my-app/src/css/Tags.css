@@ -1,6 +1,7 @@
 .Tags {
     margin-top: 20px;
     text-align: left;
+    background-color: white, transparent(0.1);
   }
   
   .Tags label {
