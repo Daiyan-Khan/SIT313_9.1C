@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Daiyan-Khan/SIT313_9.1C'
+                git 'https://github.com/Daiyan-Khan/SIT313_9.1C.git'
             }
         }
         stage('Build') {
