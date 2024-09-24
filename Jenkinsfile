@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Daiyan-Khan/SIT313_9.1C'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building the project...'
