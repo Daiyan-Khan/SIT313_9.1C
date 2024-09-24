@@ -20,12 +20,24 @@ pipeline {
                 echo 'Running tests...'
                 sh 'npm test' // Run your test suite (Jest, Mocha, etc.)
             }
+            post {
+                always {
+                    echo 'Publishing test results...'
+                    junit 'reports/junit.xml' // Publish Jest test results (after configuring Jest for JUnit output)
+                }
+                success {
+                    echo 'Tests passed successfully.'
+                }
+                failure {
+                    echo 'Tests failed. Please check the logs and test results.'
+                }
+            }
         }
 
         stage('Code Quality Analysis') {
             steps {
                 echo 'Running code quality analysis...'
-                sh 'sonar-scanner' // Run SonarQube analysis (ensure SonarQube is installed & configured)
+                sh 'npx eslint src'
             }
         }
 
@@ -37,11 +49,10 @@ pipeline {
             }
         }
 
-        stage('Release to Production') {
+        stage('Deploy') {
             steps {
-                echo 'Promoting to production...'
-                // Example of AWS Elastic Beanstalk deployment
-                sh 'eb deploy production-environment'
+                echo 'Deploying application...'
+                sh 'docker-compose up -d'
             }
         }
 
