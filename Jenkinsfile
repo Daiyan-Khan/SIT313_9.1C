@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Replace with your GitHub repository URL
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/Daiyan-Khan/SIT313_9.1C.git'
             }
         }
         stage('Build') {
