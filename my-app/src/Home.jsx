@@ -46,7 +46,6 @@ const Home = () => {
             <div className="search-bar">
                 <p>Dev@DEAKIN</p>
                 <input type="text" placeholder="Search..." />
-                {/* Conditional rendering for post button or sign-up prompt */}
                     <Link to='/post'>
                         <button type="button">Post</button> {/* Button to navigate to post page */}
                     </Link>
